@@ -1,0 +1,132 @@
+.faqSection {
+  padding: 4rem 2rem;
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.subHeading {
+  color: #666;
+  font-size: 1rem;
+}
+
+.heading {
+  color: #556b2f;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.imageContainer {
+  flex: 1 1 40%;
+  display: none; /* Hidden on mobile by default */
+  overflow: hidden; /* Ensures the scaled image doesn't overflow */
+  border-radius: 15px; /* Matches the image border-radius */
+}
+
+.faqImage {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  transition: transform 0.4s ease-in-out; /* Smooth transition for the transform */
+}
+
+.imageContainer:hover .faqImage {
+  transform: translateY(-5px) scale(1.02); /* Lifts and slightly scales up */
+}
+
+.faqWrapper {
+  flex: 1 1 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faqItem {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.faqQuestion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1.2rem 1.5rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.icon {
+  color: #556b2f;
+  font-size: 1rem;
+  background-color: #e8f5e9;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.faqAnswer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out, padding 0.4s ease;
+  padding: 0 1.5rem;
+}
+
+.faqAnswer.open {
+  max-height: 200px; /* Adjust as needed */
+  padding: 0 1.5rem 1.5rem;
+}
+
+.faqAnswer p {
+  margin: 0;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+  .imageContainer {
+    display: block; /* Show image on desktop */
+  }
+}
+
+@media (max-width: 768px) {
+  .faqSection {
+    padding: 3rem 1rem;
+  }
+  .heading {
+    font-size: 1.8rem;
+  }
+  .contentWrapper {
+    flex-direction: column;
+  }
+  .faqWrapper {
+    flex: 1 1 100%;
+  }
+}

@@ -1,0 +1,218 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: #fafafa;
+  color: rgb(0, 0, 0);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  width: 100%;
+}
+
+.img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.listContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.listContainer li {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.listContainer li::after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: green;
+  transition: width 0.3s ease-in-out;
+  transform-origin: left;
+}
+
+.listContainer a {
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.activeLink {
+  color: green;
+}
+
+@media (min-width: 769px) {
+  .listContainer li:hover::after,
+  .listContainer li:has(a.activeLink)::after {
+    width: 100%;
+  }
+  .header {
+    padding: 10px 50px;
+  }
+}
+
+.icons {
+  font-size: 10px;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 101;
+  min-width: 150px;
+}
+
+.dropdownMenu li {
+  padding: 5px 0;
+}
+
+.dropdownMenu li a {
+  display: block;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.dropdownMenu li a:hover {
+  background-color: #90ee90;
+}
+
+.dropdownMenu li::after,
+.dropdownMenu li:hover::after {
+  width: 0;
+}
+
+.contactContainer {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.upcomingEvents {
+  background-color: transparent;
+  border: 1px solid green;
+  color: green;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.upcomingEvents:hover {
+  background-color: rgb(91, 47, 47);
+  transition: 0.3s ease-in-out;
+  color: white;
+}
+
+.login {
+  background-color: green;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  padding: 10px 20px;
+  border-radius: 5px;
+  /* Add other button styles like padding, border, etc. */
+}
+
+.login:hover {
+  background-color: transparent;
+  background-color: rgb(91, 47, 47);
+  transition: 0.3s ease-in-out;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  align-self: center;
+  justify-self: flex-end;
+  margin-left: auto;
+  padding: 8px;
+  border: none;
+  background: transparent;
+  color: inherit;
+}
+
+@media (max-width: 768px) {
+  .listContainer {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: #fafafa;
+    padding: 20px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    z-index: 101;
+  }
+
+  .header {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hamburger {
+    display: block;
+    order: 3;
+    margin-left: auto;
+    position: relative;
+    z-index: 102;
+  }
+
+  .logoContainer {
+    order: 1;
+  }
+
+  .nav {
+    order: 2;
+    display: none;
+  }
+
+  .navOpen {
+    display: block;
+  }
+
+  .navOpen .listContainer {
+    display: flex;
+  }
+
+  .contactContainer {
+    display: none;
+  }
+
+  .dropdownMenu {
+    display: none;
+  }
+
+  .activeLink::after,
+  .listContainer li:hover::after {
+    width: 0;
+  }
+
+  .activeLink {
+    color: green;
+  }
+
+  .mobileSubMenu {
+    list-style: none;
+    padding-left: 20px;
+  }
+
+  .mobileSubMenu li {
+    padding: 5px 0;
+  }
+}

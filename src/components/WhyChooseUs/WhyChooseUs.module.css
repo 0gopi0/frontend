@@ -1,0 +1,143 @@
+.whyChooseUsSection {
+  padding: 5rem 2rem;
+  background-color: #fdfdfc;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contentWrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.textContent {
+  flex: 0 0 55%;
+  background-color: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  position: relative;
+}
+
+.imageContent {
+  flex: 0 0 50%;
+  margin-left: -5%; /* Overlap amount */
+  z-index: 1;
+}
+
+.resortImage {
+  width: 100%;
+  border-radius: 20px;
+  height: auto;
+  display: block;
+}
+
+.subHeading {
+  color: #6b7280;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.heading {
+  color: #556b2f;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.description {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  max-width: 450px;
+}
+
+.featuresList {
+  margin-top: 1.5rem;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.featureIcon {
+  background-color: #e8f5e9;
+  color: #556b2f;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.featureContent {
+  flex: 1;
+}
+
+.featureTitle {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #556b2f;
+  margin: 0;
+}
+
+.featureDescription {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0.25rem 0 0;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .textContent {
+    flex: 0 0 65%;
+  }
+
+  .imageContent {
+    flex: 0 0 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .whyChooseUsSection {
+    padding: 3rem 1rem;
+  }
+  .contentWrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .textContent {
+    margin-bottom: -3rem; /* Overlap from top */
+    padding: 2rem;
+  }
+
+  .imageContent {
+    margin-left: 0;
+    width: 100%;
+    flex: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 2rem;
+  }
+  .textContent {
+    padding: 1.5rem;
+  }
+}

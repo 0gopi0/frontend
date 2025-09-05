@@ -1,0 +1,218 @@
+.upcomingEventsSection {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.subHeading {
+  color: #6b7280;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.heading {
+  color: #4b5563;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #556b2f;
+}
+
+.eventsContainer {
+  margin-bottom: 2rem;
+}
+
+.eventsWrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.eventCard {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  background-color: white;
+}
+
+.eventCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.imageContainer {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.eventImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.eventCard:hover .eventImage {
+  transform: scale(1.05);
+}
+
+.eventTag {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #f59e0b;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.eventInfo {
+  padding: 1rem;
+}
+
+.eventTitle {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  line-height: 1.4;
+}
+
+.eventLocation {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.875rem;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.eventPrice {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #556b2f;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.paginationDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #d1d5db;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.activeDot {
+  background-color: #556b2f;
+  transform: scale(1.2);
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .upcomingEventsSection {
+    padding: 3rem 1.5rem;
+  }
+  
+  .heading {
+    font-size: 2.25rem;
+  }
+  
+  .eventsWrapper {
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .upcomingEventsSection {
+    padding: 2.5rem 1rem;
+  }
+  
+  .heading {
+    font-size: 2rem;
+  }
+  
+  .eventsWrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .upcomingEventsSection {
+    padding: 2rem 0.75rem;
+  }
+  
+  .heading {
+    font-size: 1.75rem;
+  }
+  
+  .imageContainer {
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .upcomingEventsSection {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .heading {
+    font-size: 1.5rem;
+  }
+  
+  .subHeading {
+    font-size: 0.875rem;
+  }
+  
+  .eventsWrapper {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .eventCard {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .imageContainer {
+    height: 220px;
+  }
+  
+  .eventTitle {
+    font-size: 1.125rem;
+  }
+  
+  .eventInfo {
+    padding: 1.25rem;
+  }
+  
+  .pagination {
+    margin-top: 2rem;
+  }
+  
+  .paginationDot {
+    width: 12px;
+    height: 12px;
+  }
+}

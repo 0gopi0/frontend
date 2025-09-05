@@ -1,0 +1,1055 @@
+/* Contact Banner Container */
+.bannerContainer {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-image: url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.bannerContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(45, 80, 22, 0.8) 0%,
+    rgba(58, 95, 26, 0.7) 50%,
+    rgba(34, 197, 94, 0.6) 100%
+  );
+  z-index: 1;
+}
+
+.bannerOverlay {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 0 2rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.bannerTitle {
+  font-size: 4rem;
+  font-weight: 800;
+  margin: 0 0 1.5rem 0;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.bannerSubtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
+  opacity: 0.95;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  line-height: 1.4;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .bannerContainer {
+    height: 450px;
+    background-attachment: scroll;
+  }
+  
+  .bannerTitle {
+    font-size: 3.5rem;
+  }
+  
+  .bannerSubtitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .bannerContainer {
+    height: 400px;
+  }
+  
+  .bannerOverlay {
+    padding: 0 1.5rem;
+  }
+  
+  .bannerTitle {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .bannerSubtitle {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bannerContainer {
+    height: 350px;
+  }
+  
+  .bannerOverlay {
+    padding: 0 1rem;
+  }
+  
+  .bannerTitle {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .bannerSubtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .bannerContainer {
+    height: 300px;
+  }
+  
+  .bannerTitle {
+    font-size: 2rem;
+  }
+  
+  .bannerSubtitle {
+    font-size: 1rem;
+  }
+}
+
+/* Contact Section Styles */
+.contactSection {
+  padding: 5rem 0;
+  background-color: #f8fafc;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: stretch;
+}
+
+/* Left Container Styles */
+.leftContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.sectionDescription {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #475569;
+  margin: 0;
+  max-width: 500px;
+}
+
+.contactCards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contactCard {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(34, 197, 94, 0.1);
+}
+
+.contactCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: rgba(34, 197, 94, 0.2);
+}
+
+.iconContainer {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 8px 25px rgba(34, 197, 94, 0.3);
+  transition: all 0.3s ease;
+}
+
+.contactCard:hover .iconContainer {
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px rgba(34, 197, 94, 0.4);
+}
+
+.cardContent {
+  flex: 1;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #22c55e;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.3;
+}
+
+.cardText {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #374151;
+  margin: 0;
+}
+
+/* Right Container Styles */
+.rightContainer {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+}
+
+.imageFrame {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.imageFrame:hover {
+  transform: scale(1.02);
+}
+
+.adventureImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+  flex: 1;
+}
+
+.imageFrame:hover .adventureImage {
+  transform: scale(1.05);
+}
+
+.imageOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    transparent 100%
+  );
+  padding: 2rem;
+  color: white;
+}
+
+.overlayContent {
+  max-width: 300px;
+}
+
+.overlayTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.overlayText {
+  font-size: 1rem;
+  margin: 0;
+  opacity: 0.9;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Design for Contact Section */
+@media (max-width: 1024px) {
+  .contactSection {
+    padding: 4rem 0;
+  }
+  
+  .container {
+    gap: 3rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contactSection {
+    padding: 3rem 0;
+  }
+  
+  .container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 0 1.5rem;
+    align-items: start;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .sectionDescription {
+    text-align: center;
+    max-width: none;
+  }
+  
+  .contactCard {
+    padding: 1.5rem;
+  }
+  
+  .iconContainer {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .cardTitle {
+    font-size: 1.1rem;
+  }
+  
+  .cardText {
+    font-size: 0.9rem;
+  }
+  
+  .imageFrame {
+    height: 400px;
+  }
+  
+  .imageOverlay {
+    padding: 1.5rem;
+  }
+  
+  .overlayTitle {
+    font-size: 1.25rem;
+  }
+  
+  .overlayText {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactSection {
+    padding: 2rem 0;
+  }
+  
+  .container {
+    padding: 0 1rem;
+    gap: 2rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+  
+  .sectionDescription {
+    font-size: 1rem;
+  }
+  
+  .contactCard {
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+  
+  .iconContainer {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .cardTitle {
+    font-size: 1rem;
+  }
+  
+  .cardText {
+    font-size: 0.85rem;
+  }
+  
+  .imageFrame {
+    height: 300px;
+  }
+  
+  .imageOverlay {
+    padding: 1rem;
+  }
+  
+  .overlayTitle {
+    font-size: 1.1rem;
+  }
+  
+  .overlayText {
+    font-size: 0.85rem;
+  }
+}
+
+/* Contact Form Banner Section */
+.formBannerContainer {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.formBannerContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  z-index: 1;
+}
+
+.formBannerOverlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  padding: 4rem 2rem;
+}
+
+.formContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Form Left Content */
+.formLeftContent {
+  color: white;
+  animation: slideInLeft 1s ease-out;
+}
+
+.formTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: #22c55e;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.formMainHeading {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.formDescription {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0.9;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  max-width: 500px;
+}
+
+/* Form Right Content */
+.formRightContent {
+  animation: slideInRight 1s ease-out;
+}
+
+.contactForm {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.inputContainer {
+  position: relative;
+}
+
+.formInput {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background-color: #f9fafb;
+  color: #374151;
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: #22c55e;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+  transform: translateY(-2px);
+}
+
+.formInput::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+.textareaInput {
+  resize: vertical;
+  min-height: 120px;
+  padding-top: 1rem;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  transition: color 0.3s ease;
+  pointer-events: none;
+}
+
+.formInput:focus + .inputIcon,
+.inputContainer:focus-within .inputIcon {
+  color: #22c55e;
+}
+
+.submitButton {
+  width: 100%;
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 25px rgba(34, 197, 94, 0.3);
+}
+
+.submitButton:hover {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(34, 197, 94, 0.4);
+}
+
+.submitButton:active {
+  transform: translateY(0);
+}
+
+/* Animations */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design for Form Section */
+@media (max-width: 1024px) {
+  .formBannerContainer {
+    min-height: 500px;
+    background-attachment: scroll;
+  }
+  
+  .formBannerOverlay {
+    padding: 3rem 2rem;
+  }
+  
+  .formContainer {
+    gap: 3rem;
+  }
+  
+  .formMainHeading {
+    font-size: 2.5rem;
+  }
+  
+  .formDescription {
+    font-size: 1.1rem;
+  }
+  
+  .contactForm {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .formBannerContainer {
+    min-height: auto;
+  }
+  
+  .formBannerOverlay {
+    padding: 2rem 1.5rem;
+  }
+  
+  .formContainer {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .formMainHeading {
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .formDescription {
+    font-size: 1rem;
+    text-align: center;
+    max-width: none;
+  }
+  
+  .contactForm {
+    padding: 1.5rem;
+  }
+  
+  .formInput {
+    padding: 0.875rem 0.875rem 0.875rem 2.5rem;
+  }
+  
+  .inputIcon {
+    left: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .formBannerOverlay {
+    padding: 1.5rem 1rem;
+  }
+  
+  .formContainer {
+    gap: 2rem;
+  }
+  
+  .formTitle {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+  
+  .formMainHeading {
+    font-size: 1.75rem;
+  }
+  
+  .formDescription {
+    font-size: 0.9rem;
+  }
+  
+  .contactForm {
+    padding: 1.25rem;
+  }
+  
+  .formInput {
+    padding: 0.75rem 0.75rem 0.75rem 2.25rem;
+    font-size: 0.9rem;
+  }
+  
+  .inputIcon {
+    left: 0.75rem;
+  }
+  
+  .submitButton {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Google Maps Section */
+.mapSection {
+  padding: 5rem 0;
+  background-color: #f8fafc;
+}
+
+.mapContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.mapHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.mapTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.mapSubtitle {
+  font-size: 1.2rem;
+  color: #475569;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.mapWrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.mapWrapper:hover {
+  transform: translateY(-4px);
+}
+
+.mapPlaceholder {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mapPlaceholder:hover {
+  transform: scale(1.02);
+}
+
+.mapOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: background 0.3s ease;
+}
+
+.mapPlaceholder:hover .mapOverlay {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+}
+
+.mapInfo {
+  text-align: center;
+  color: white;
+  max-width: 400px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.mapPlaceholder:hover .mapInfo {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+
+.mapLocationTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  color: #22c55e;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.mapAddress {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+  opacity: 0.9;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.mapButton {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: white;
+  border: none;
+  padding: 0.875rem 1.5rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 25px rgba(34, 197, 94, 0.3);
+  margin: 0 auto;
+}
+
+.mapButton:hover {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(34, 197, 94, 0.4);
+}
+
+.mapButton:active {
+  transform: translateY(0);
+}
+
+.mapImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.mapImageContent {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+
+.mapPlaceholder:hover .mapImageContent {
+  transform: scale(1.1);
+}
+
+.mapPin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  animation: pulse 2s infinite;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Responsive Design for Maps Section */
+@media (max-width: 1024px) {
+  .mapSection {
+    padding: 4rem 0;
+  }
+  
+  .mapTitle {
+    font-size: 2.25rem;
+  }
+  
+  .mapSubtitle {
+    font-size: 1.1rem;
+  }
+  
+  .mapPlaceholder {
+    height: 450px;
+  }
+  
+  .mapInfo {
+    padding: 1.5rem;
+    max-width: 350px;
+  }
+  
+  .mapLocationTitle {
+    font-size: 1.25rem;
+  }
+  
+  .mapAddress {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .mapSection {
+    padding: 3rem 0;
+  }
+  
+  .mapContainer {
+    padding: 0 1.5rem;
+  }
+  
+  .mapHeader {
+    margin-bottom: 2rem;
+  }
+  
+  .mapTitle {
+    font-size: 2rem;
+  }
+  
+  .mapSubtitle {
+    font-size: 1rem;
+  }
+  
+  .mapPlaceholder {
+    height: 400px;
+  }
+  
+  .mapInfo {
+    padding: 1.25rem;
+    max-width: 300px;
+  }
+  
+  .mapLocationTitle {
+    font-size: 1.1rem;
+  }
+  
+  .mapAddress {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+  
+  .mapButton {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mapSection {
+    padding: 2rem 0;
+  }
+  
+  .mapContainer {
+    padding: 0 1rem;
+  }
+  
+  .mapTitle {
+    font-size: 1.75rem;
+  }
+  
+  .mapSubtitle {
+    font-size: 0.9rem;
+  }
+  
+  .mapPlaceholder {
+    height: 350px;
+  }
+  
+  .mapInfo {
+    padding: 1rem;
+    max-width: 280px;
+  }
+  
+  .mapLocationTitle {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .mapAddress {
+    font-size: 0.8rem;
+    margin-bottom: 0.875rem;
+  }
+  
+  .mapButton {
+    padding: 0.625rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .mapPin {
+    width: 24px;
+    height: 24px;
+  }
+}

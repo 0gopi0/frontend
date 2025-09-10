@@ -70,6 +70,9 @@ const About = () => {
       <div className={styles.bannerContainer}>
         <div className={styles.bannerOverlay}>
           <h1 className={styles.bannerTitle}>About Us</h1>
+          <p className={styles.bannerSubtitle}>
+            Discover the beauty of Karnataka with Travel Wild
+          </p>
         </div>
       </div>
 

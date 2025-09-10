@@ -1,16 +1,19 @@
 import { NavLink, useLocation } from "react-router-dom";
 import styles from "./Header.module.css";
-import { FaPlus, FaMinus, FaBars, FaTimes } from "react-icons/fa";
+import { FaPlus, FaMinus, FaBars, FaTimes, FaUser, FaSignOutAlt } from "react-icons/fa";
 
 import logo from "../../assets/logo.png"; // Assuming you have a logo image
 import { useState, useEffect } from "react";
+import { useAuth } from "../../context/AuthContext";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [mobileSubMenu, setMobileSubMenu] = useState("");
+  const [showUserMenu, setShowUserMenu] = useState(false);
   const location = useLocation();
+  const { user, logout, isLoading } = useAuth();
 
   useEffect(() => {
     const handleResize = () => {
@@ -209,7 +212,45 @@ const Header = () => {
         <span>+91-8328212741</span>
         <button className={styles.upcomingEvents}>Upcoming Events</button>
 
-        <button className={styles.login}>LogIn</button>
+        {!isLoading && (
+          <div className={styles.authSection}>
+            {user ? (
+              <div className={styles.userMenu}>
+                <button 
+                  className={styles.userButton}
+                  onClick={() => setShowUserMenu(!showUserMenu)}
+                >
+                  <FaUser className={styles.userIcon} />
+                  <span className={styles.userName}>{user.name}</span>
+                </button>
+                {showUserMenu && (
+                  <div className={styles.userDropdown}>
+                    <div className={styles.userInfo}>
+                      <p className={styles.userEmail}>{user.email}</p>
+                      <span className={styles.userProvider}>
+                        {user.provider === 'google' ? 'Google Account' : 'Local Account'}
+                      </span>
+                    </div>
+                    <button 
+                      className={styles.logoutButton}
+                      onClick={() => {
+                        logout();
+                        setShowUserMenu(false);
+                      }}
+                    >
+                      <FaSignOutAlt className={styles.logoutIcon} />
+                      Logout
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <NavLink to="/login" className={styles.login}>
+                LogIn
+              </NavLink>
+            )}
+          </div>
+        )}
       </div>
     </header>
   );
